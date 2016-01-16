@@ -4,7 +4,7 @@ from os import environ
 
 # Config
 DEBUG = True
-REDIS_HOST = environ['REDIS_1_PORT_6379_TCP_ADDR']
+#REDIS_HOST = environ['REDIS_1_PORT_6379_TCP_ADDR']
 
 # Util functions
 def get_random_kanji():
