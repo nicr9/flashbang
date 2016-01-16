@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Kanji</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+  <h1>Kanji</h1>
+  <div class=metanav>
+      <a href="{{ url_for('reload') }}">Reload Kanji</a>
+  </div>
+  <div class=table>
+    <table style="width:100%">
+      <tr>
+        <th>Kanji</th>
+        <th>Pronunciation</th>
+        <th>English</th>
+      </tr>
+    {% for kanji, pronunciation, english in kanji %}
+      <tr>
+        <td class=kanji>{{ kanji }}</td>
+        <td class=hidden>{{ pronunciation }}</td>
+        <td class=hidden>{{ english }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+
+  </div>
+</div>
