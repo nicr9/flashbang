@@ -1,10 +1,8 @@
 from flask import Flask, render_template, redirect
-from redis import Redis
 from os import environ
 
 # Config
 DEBUG = True
-#REDIS_HOST = environ['REDIS_1_PORT_6379_TCP_ADDR']
 
 # Util functions
 def get_random_kanji():
@@ -15,15 +13,12 @@ def get_random_kanji():
             ['g', 'h', 'i'],
             ['j', 'k', 'l'],
             ]
+SPREADSHEET = "https://docs.google.com/spreadsheets/d/1HYaVNzAfFPguuud0abHIcVBvYYc9l5yJ8R7fiukwSu8/pub?gid=1951215858&single=true&output=csv"
+KANJI_PATH = os.path.join(os.path.dirname(__file__), 'kanji.csv')
 
 # Create App
 app = Flask(__name__)
 app.config.from_object(__name__)
-
-@app.before_request
-def before_request():
-    #g.db = Redis(host=app.config['REDIS_HOST'])
-    pass
 
 @app.route("/")
 def homepage():

@@ -3,8 +3,3 @@ kanji:
   command: python kanji.py
   ports:
     - "4000:4000"
-  links:
-    - redis
-
-redis:
-  image: redis
