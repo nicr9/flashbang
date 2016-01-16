@@ -8,11 +8,12 @@ DEBUG = True
 
 # Util functions
 def get_random_kanji():
+    """Returns four random kanji tuples."""
     return [
-            ('a', 'b', 'c'),
-            ('d', 'e', 'f'),
-            ('g', 'h', 'i'),
-            ('j', 'k', 'l'),
+            ['a', 'b', 'c'],
+            ['d', 'e', 'f'],
+            ['g', 'h', 'i'],
+            ['j', 'k', 'l'],
             ]
 
 # Create App
@@ -38,4 +39,4 @@ def env():
     return check_output(["env"], shell=True)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=4000) # 127.0.0.1
