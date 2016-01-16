@@ -2,7 +2,7 @@ kanji:
   build: ./kanji
   command: python kanji.py
   ports:
-    - "5000:5000"
+    - "4000:4000"
   links:
     - redis
 

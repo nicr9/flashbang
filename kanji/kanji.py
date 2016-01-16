@@ -33,10 +33,5 @@ def homepage():
 def reload():
     return redirect("/", code=302)
 
-@app.route("/env")
-def env():
-    from subprocess import check_output
-    return check_output(["env"], shell=True)
-
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=4000) # 127.0.0.1
+    app.run(host="0.0.0.0", port=4000) # 127.0.0.1:4000

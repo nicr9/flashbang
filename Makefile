@@ -7,3 +7,6 @@ build-all:
 
 kanji-up:
 	$(COMPOSE) up -d kanji
+
+logs:
+	$(COMPOSE) logs
