@@ -16,11 +16,10 @@ app.config.from_object(__name__)
 
 @app.route("/")
 def homepage():
-    with open(KANJI_PATH, 'r') as inp:
+    with open(KANJI_PATH, 'r', encoding="utf8") as inp:
         reader = csv.reader(inp, delimiter=',')
         all_kanji = [
-                [kanji, pronun, english]
-                for kanji, pronun, english in reader
+                x for x in reader
                 ]
     return render_template("homepage.html", kanji=random.sample(all_kanji, 4))
 
