@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kanji Flash Cards</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Kanji Flash Cards</h2>
+  <p>Press reload to see new Kanji</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Kanji</th>
+        <th>Pronunciation</th>
+        <th>English</th>
+      </tr>
+    </thead>
+    <tbody>
+         {% for kanji, pronunciation, english in kanji %}
+ <tr>
+        <td class="kanji">{{kanji}}</td>
+        <td class="kanji">{{pronunciation}}</td>
+        <td class="kanji">{{english}}</td>
+     {%endfor%}
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
