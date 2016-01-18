@@ -16,13 +16,15 @@ app.config.from_object(__name__)
 
 @app.route("/")
 def homepage():
+    
     with open(KANJI_PATH, 'r', encoding="utf8") as inp:
         reader = csv.reader(inp, delimiter=',')
         all_kanji = [
                 x for x in reader
                 ]
-    return render_template("homepage.html", kanji=random.sample(all_kanji, 4))
+    return render_template("Kanji_Flash_Cards.html",kanji=random.sample(all_kanji, 4))
 
+@app.route("/reload")
 @app.route("/reload")
 def reload():
     return redirect("/", code=302)

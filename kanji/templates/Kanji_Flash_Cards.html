@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kanji Flash Cards</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/bootstrap.min.css" rel ="stylesheet"> <!--Calls Bootstrap css-->
+  
+  <link href = "static/style.css" rel = "stylesheet">
+  
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="bar">
+<div class="container">
+
+  <h3>Kanji Flash Cards</h3>
+  
+  
+  <!---Navigation--->
+  
+  
+  <p>Press reload to see new Kanji</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Kanji</th>
+        <th>Pronunciation</th>
+        <th>English</th>
+      </tr>
+    </thead>
+    <tbody>
+         {% for kanji, pronunciation, english in kanji %}
+ <tr>
+        <td class="kanji"><h1>{{kanji}}</h1></td>
+        <td class="kanji"><h1>{{pronunciation}}</h1></td>
+        <td class="kanji"><h2>{{english}}</h2></td>
+     {%endfor%}
+      </tr>
+    </tbody>
+  </table>
+</div>
+   <?php include 'templates/cookie.php'; ?>
+</body>
+</html>

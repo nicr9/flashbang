@@ -1,4 +1,4 @@
-body            { font-family: sans-serif; background: #eee; }
+body            { font-family: sans-serif; background: #0b76ba; }
 a, h1, h2       { color: #377ba8; }
 h1, h2          { font-family: 'Georgia', serif; margin: 0; }
 h1              { border-bottom: 2px solid #eee; }
@@ -17,6 +17,17 @@ th {
     background-color: #4CAF50;
     color: white;
 }
+
+#bar {
+    background: white;
+    width: auto;
+    margin: 0 auto;
+    padding: auto;
+      box-shadow: 0 0 70px #222;
+    -moz-box-shadow: 0 0 90px #222;
+    -webkit-box-shadow: 0 0 90px #222;
+}
+
 
 .page           { margin: 2em auto; width: 55em; border: 5px solid #ccc;
                   padding: 0.8em; background: white; }
