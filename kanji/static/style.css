@@ -1,8 +1,12 @@
 body            { font-family: sans-serif; background: #0b76ba; }
-a, h1, h2       { color: #377ba8; }
-h1, h2          { font-family: 'Georgia', serif; margin: 0; }
-h1              { border-bottom: 2px solid #eee; }
-h2              { font-size: 1.2em; }
+a, h1, h2
+h1, h2,h4 ,h5         { font-family: 'Georgia', serif; margin: 0; }
+
+
+h4 ,h5      { color: #fff; }
+
+h1             { color: #377ba8; }
+h2,h4,h5             { font-size: 1.2em; }
 table {
     border-collapse: collapse;
     width: 100%;
@@ -11,11 +15,36 @@ table {
 th, td {
     text-align: left;
     padding: 9px;
+	
 }
+
+
+
+
+h4:hover {
+	
+   
+font-size: 1.2em; 
+color: #377ba8;
+font-family: 'Georgia', serif; margin: 0;
+}
+
+h5:hover {
+	
+  
+font-size: 1.2em; 
+color: #377ba8;
+font-family: 'Georgia', serif; margin: 0;
+}
+
+
+
 
 th {
     background-color: #4CAF50;
     color: white;
+	
+	
 }
 
 #bar {
