@@ -6,9 +6,9 @@ h1, h2,h4 ,h5 ,h6         { font-family: 'Georgia', serif; margin: 0; }
 h4 ,h5      { color: #fff; }
 
 h1 ,h6             { color: #377ba8; }
-h2,h4,h5             { font-size: 1.2em; }
+h2,h4,h5             { font-size: 1.8em; }
 
-h6 {font-size: 2.5em}
+h6 {font-size:3.1em}
 
 
 
@@ -26,12 +26,10 @@ th, td {
 
 
 
-
-
 h4:hover {
 	
    
-font-size: 1.2em; 
+font-size: 1.8em; 
 color: #377ba8;
 font-family: 'Georgia', serif; margin: 0;
 }
@@ -39,7 +37,7 @@ font-family: 'Georgia', serif; margin: 0;
 h5:hover {
 	
   
-font-size: 1.2em; 
+font-size: 1.7em; 
 color: #377ba8;
 font-family: 'Georgia', serif; margin: 0;
 }
@@ -82,12 +80,4 @@ th {
 .hidden         { color: white; font-size: 150% }
 
 
-.li1
-{
-  list-style-type: square;
-font-size: 19px;
-color: #e1fb03;
-line-height: 24px;
-margin: 0 0 25px;
 
-}

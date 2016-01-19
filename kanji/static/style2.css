@@ -1,10 +1,17 @@
-/*Code by Anthony Bermingham*/
-
 body            { font-family: sans-serif; background: #0b76ba; }
-a, h1, h2       { color: #377ba8; }
-h1, h2          { font-family: 'Georgia', serif; margin: 0; }
-h1              { border-bottom: 2px solid #eee; }
-h2              { font-size: 1.2em; }
+a, h1, h2
+h1, h2,h4 ,h5 ,h6         { font-family: 'Georgia', serif; margin: 0; }
+
+
+h4 ,h5      { color: #fff; }
+
+h1 ,h6             { color: #377ba8; }
+h2,h4,h5             { font-size: 1.5em; }
+
+h6 {font-size: 2.8em}
+
+
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -13,11 +20,36 @@ table {
 th, td {
     text-align: left;
     padding: 9px;
+	
 }
+
+
+
+
+h4:hover {
+	
+   
+font-size: 1.5em; 
+color: #377ba8;
+font-family: 'Georgia', serif; margin: 0;
+}
+
+h5:hover {
+	
+  
+font-size: 1.7em; 
+color: #377ba8;
+font-family: 'Georgia', serif; margin: 0;
+}
+
+
+
 
 th {
     background-color: #4CAF50;
     color: white;
+	
+	
 }
 
 #bar {
@@ -46,5 +78,6 @@ th {
 .error          { background: #f0d6d6; padding: 0.5em; }
 .kanji          { font-size: 200%; }
 .hidden         { color: white; font-size: 150% }
+
 
 
