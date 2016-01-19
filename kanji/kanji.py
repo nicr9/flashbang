@@ -25,7 +25,7 @@ def homepage():
     return render_template("Kanji_Flash_Cards.html",kanji=random.sample(all_kanji, 4))
 
 @app.route("/reload")
-@app.route("/reload")
+
 def reload():
     return redirect("/", code=302)
 
