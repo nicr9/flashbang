@@ -9,13 +9,13 @@ h1  { color: #000; }
 
 h4 ,h5      { color: #000; }
 h1 { color: #e1fb03; }
-h6             { color: #000; }
+h6             { color: #e1fb03; }
 h2,h4,h5             { font-size: 1.8em; }
 
 h6 {font-size:3.1em}
 
-small { color: #e1fb03;}
-	p { color: #e1fb03;}
+small { color: #e1fb03; font-size: 1.8em; }
+	p { color: #e1fb03; font-size: 1.8em;}
 
 
 table {
@@ -32,6 +32,8 @@ th, td {
 
 
 
+
+
 h4:hover {
 	
    
@@ -43,7 +45,7 @@ font-family: 'Georgia', serif; margin: 0;
 h5:hover {
 	
   
-font-size: 1.7em; 
+font-size: 1.8em; 
 color: #e1fb03;
 font-family: 'Georgia', serif; margin: 0;
 }
@@ -54,7 +56,7 @@ font-family: 'Georgia', serif; margin: 0;
 th {
     background-color: #d60091;
     color: #e1fb03;
-	
+	font-size: 1.8em; 
 	
 }
 
@@ -69,6 +71,10 @@ th {
     -webkit-box-shadow: 0 0 70px #222;
 }
 
+img {
+	width: 24px;
+		height: 24px;
+}
 
 .page           { margin: 2em auto; width: 55em; border: 5px solid #ccc;
                   padding: 0.8em; background: white; }
