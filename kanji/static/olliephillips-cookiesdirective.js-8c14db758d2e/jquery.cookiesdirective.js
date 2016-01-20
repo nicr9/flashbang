@@ -22,8 +22,8 @@
 			scriptWrapper: function(){},	
 			// Styling
 			fontFamily: 'helvetica',
-			fontColor: '#FFFFFF',
-			fontSize: '13px',
+			fontColor: '#000',
+			fontSize: '16px',
 			backgroundColor: '#000000',
 			backgroundOpacity: '80',
 			linkColor: '#CA0000'
