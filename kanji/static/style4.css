@@ -10,7 +10,7 @@ h1  { color: #000; }
 h4 ,h5      { color: #000; }
 h1 { color: #e1fb03; }
 h6             { color: #e1fb03; }
-h2,h4,h5             { font-size: 1.8em; }
+h2,h4,h5,h1             { font-size: 1.8em; }
 
 h6 {font-size:3.1em}
 
