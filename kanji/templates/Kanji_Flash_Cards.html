@@ -1,84 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Kanji Flash Cards</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static/bootstrap.min.css" rel ="stylesheet"> <!--Calls Bootstrap css-->
-  
-		   	<link rel="stylesheet" type="text/css" href="static/style.css" media="all">
+    <title>Kanji Flash Cards</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="alternate stylesheet" type="text/css" media="screen" title="style2" href="static/style2.css" />
-<link rel="alternate stylesheet" type="text/css" media="screen" title="style3" href="static/style3.css" />
-<link rel="alternate stylesheet" type="text/css" media="screen" title="style4" href="static/style4.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/bootstrap.min.css" rel ="stylesheet"> <!--Calls Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="static/style.css" media="all">
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style2" href="static/style2.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style3" href="static/style3.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style4" href="static/style4.css" />
 
-		<script type="text/javascript" src="static/styleswitch.js"></script>
-  
-  <script type="text/javascript" src="../static/jquery.min.js"></script>
-
-		  <script type="text/javascript" src="../static/jquery-1.js"></script> 
-		
-		
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
-  <script type="text/javascript" src="../static/olliephillips-cookiesdirective.js-8c14db758d2e/jquery.cookiesdirective.js"></script>
-
-  
-  
-  
-  
+    <!-- Javascript -->
+    <script type="text/javascript" src="static/styleswitch.js"></script>
+    <script type="text/javascript" src="../static/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/jquery-1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/olliephillips-cookiesdirective.js-8c14db758d2e/jquery.cookiesdirective.js"></script>
   
 </head>
+
+
 <body>
-<div id="bar">
-<div class="container">
-<br><br>
-<br>
-
-<br>
-<br>
-  <h6>Kanji Flash Cards</h6>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!---Access Button-->
-     
-
-
-	
-	<div id="accessText">
-	<small>Change Display Size and Colour</small>
-        <ul>
-        	<i1><a href="javascript:chooseStyle('style', 60)"><img src="../static/image/normal.gif" alt="Default Text Size" width="16" height="15" /></a> </i1>
-        	<i1><a href="javascript:chooseStyle('style2', 60)"><img src="../static/image/large.gif" alt="Large Text Size" width="16" height="15"  /></a> </i1>
-        	<i1><a href="javascript:chooseStyle('style3', 60)"><img src="../static/image/xlarge.gif" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
-						<i1><a href="javascript:chooseStyle('style4', 60)"><img src="../static/image/Contrast.gif" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
-		
-		
-        </ul>
-    </div>
-<!--Access Button above-->
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <div id="bar">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Flash Bang Cards</a>
+            <br><br><br><br><br>
+            <h6>Kanji Flash Cards</h6>
+
+
+            <!---Access Button-->
+            <div id="accessText">
+                <small>Change Display Size and Colour</small>
+                <ul>
+                    <i1><a href="javascript:chooseStyle('style', 60)"><img src="../static/image/normal.gif" alt="Default Text Size" width="16" height="15" /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style2', 60)"><img src="../static/image/large.gif" alt="Large Text Size" width="16" height="15"  /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style3', 60)"><img src="../static/image/xlarge.gif" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style4', 60)"><img src="../static/image/Contrast.gif" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
+                </ul>
             </div>
+            <!--Access Button above-->
+
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="#page-top">Flash Bang Cards</a>
+                    </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -104,53 +81,45 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container-fluid -->
+
     </nav>
 
-   
-
   
+    <p>Press reload to see new Kanji</p>
+    <p>Use your mouse to practice your pronunciation </p>
 
 
-  
-  
-  <p>Press reload to see new Kanji</p>   
- <p>Use your mouse to practice your pronunciation </p>    
-
-  
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Kanji</th>
-        <th>Pronunciation</th>
-        <th>English</th>
-      </tr>
-    </thead>
-    <tbody>
-         {% for kanji, pronunciation, english in kanji %}
- <tr>
-        <td class="kanji"><h1>{{kanji}}</h1></td>
-        <td class="kanji"><h4>{{pronunciation}}</h4></td>
-        <td class="kanji"><h5>{{english}}</h5></td>
-     {%endfor%}
-      </tr>
-    </tbody>
-  </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Kanji</th>
+                <th>Pronunciation</th>
+                <th>English</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for kanji, pronunciation, english in kanji %}
+            <tr>
+                <td class="kanji"><h1>{{kanji}}</h1></td>
+                <td class="kanji"><h4>{{pronunciation}}</h4></td>
+                <td class="kanji"><h5>{{english}}</h5></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
 </div>
 
+<!--Cookie EU Directive Popup-->
 
+<!-- Include jQuery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
+<!-- Include you know cookiesDirective.js plugin -->
+<script type="text/javascript" src="../static/olliephillips-cookiesdirective.js-8c14db758d2e/jquery.cookiesdirective.js"></script>
 
-
-	<!--Cookie EU Directive Popup-->
-	
-			<!-- Include jQuery -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-	<!-- Include you know cookiesDirective.js plugin -->
-	<script type="text/javascript" src="../static/olliephillips-cookiesdirective.js-8c14db758d2e/jquery.cookiesdirective.js"></script>
-</head>
-<body>	
 <div id="eantics"></div>
 	<script type="text/javascript">
 	// Using $(document).ready never hurts
@@ -167,7 +136,7 @@
 				appendTo: 'eantics'
 			});
 		}
-	
+
 		/* Call cookiesDirective, overriding any default params
 		
 			*** These are the defaults ***
@@ -187,10 +156,9 @@
 				linkColor: '#CA0000'
 				
 		*/
-		
+
 		$.cookiesDirective({
 			privacyPolicyUri: '../templates/cookiepolicy.php',
-
 			explicitConsent: false,
 			position : 'bottom',
 			scriptWrapper: cookieScripts, 
@@ -201,17 +169,7 @@
 	});
 	</script>
 
-
-
-
-
-
 <!--Cookie EU Directive Popup End-->
-
-
-
-
-
 
 
 </body>
