@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flash Bang - {{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" rel ="stylesheet"> <!--Calls Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" media="all">
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style2" href="{{ url_for('static', filename='style2.css') }}" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style3" href="{{ url_for('static', filename='style3.css') }}" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style4" href="{{ url_for('static', filename='style4.css') }}" />
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='styleswitch.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-1.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='olliephillips-cookiesdirective.js-8c14db758d2e/jquery.cookiesdirective.js') }}"></script>
+
+</head>
+
+
+<body>
+    <div id="bar">
+        <div class="container">
+            <br><br><br><br><br>
+            <h6>Flash Cards - {{ title }}</h6>
+
+
+            <!---Access Button-->
+            <div id="accessText">
+                <small>Change Display Size and Colour</small>
+                <ul>
+                    <i1><a href="javascript:chooseStyle('style', 60)"><img src="{{ url_for('static', filename='image/normal.gif') }}" alt="Default Text Size" width="16" height="15" /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style2', 60)"><img src="{{ url_for('static', filename='image/large.gif') }}" alt="Large Text Size" width="16" height="15"  /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style3', 60)"><img src="{{ url_for('static', filename='image/xlarge.gif') }}" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style4', 60)"><img src="{{ url_for('static', filename='image/contrast.gif') }}" alt="High Contrast" width=width="16" height="15"  /></a> </i1>
+                </ul>
+            </div>
+            <!--Access Button above-->
+
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="#page-top">Flash Bang Cards</a>
+                    </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#Kanji_Flash_Cards.html">Kanji</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#German_Flash_Cards.html">German</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </nav>
+
+
+    <p>Press reload to see new Kanji</p>
+    <p>Use your mouse to practice your pronunciation </p>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+            {% for column in header %}
+                <th>{{ column }}</th>
+            {%endfor%}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                {% for column in row %}
+                    <!-- TODO: figure out how to hide all columns except the first one -->
+                    <td><h1>{{ column }}</h1></td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+<!--Cookie EU Directive Popup-->
+
+<!-- Include jQuery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<!-- Include you know cookiesDirective.js plugin -->
+<script type="text/javascript" src="../static/olliephillips-cookiesdirective.js-8c14db758d2e/jquery.cookiesdirective.js"></script>
+
+<div id="eantics"></div>
+	<script type="text/javascript">
+	// Using $(document).ready never hurts
+	$(document).ready(function(){
+
+		// Cookie setting script wrapper
+		var cookieScripts = function () {
+			// Internal javascript called
+			console.log("Running");
+
+			// Loading external javascript file
+			$.cookiesDirective.loadScript({
+				uri:'external.js',
+				appendTo: 'eantics'
+			});
+		}
+
+		/* Call cookiesDirective, overriding any default params
+
+			*** These are the defaults ***
+				explicitConsent: true,
+				position: 'top',
+				duration: 10,
+				limit: 0,
+				message: null,
+				cookieScripts: null,
+				privacyPolicyUri: 'privacy.html',
+				scriptWrapper: function(){},
+				fontFamily: 'helvetica',
+				fontColor: '#FFFFFF',
+				fontSize: '13px',
+				backgroundColor: '#000000',
+				backgroundOpacity: '80',
+				linkColor: '#CA0000'
+
+		*/
+
+		$.cookiesDirective({
+			privacyPolicyUri: '../templates/cookiepolicy.php',
+			explicitConsent: false,
+			position : 'bottom',
+			scriptWrapper: cookieScripts,
+			cookieScripts: 'Google Analytics,Facebook,Twitter ',
+			backgroundColor: '#4CAF50',
+			linkColor: '#000'
+		});
+	});
+	</script>
+
+<!--Cookie EU Directive Popup End-->
+
+
+</body>
+</html>
