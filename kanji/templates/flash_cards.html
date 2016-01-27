@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Kanji Flash Cards</title>
+    <title>Flash Bang - {{ title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="static/bootstrap.min.css" rel ="stylesheet"> <!--Calls Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="static/style.css" media="all">
-    <link rel="alternate stylesheet" type="text/css" media="screen" title="style2" href="static/style2.css" />
-    <link rel="alternate stylesheet" type="text/css" media="screen" title="style3" href="static/style3.css" />
-    <link rel="alternate stylesheet" type="text/css" media="screen" title="style4" href="static/style4.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" rel ="stylesheet"> <!--Calls Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" media="all">
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style2" href="{{ url_for('static', filename='style2.css') }}" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style3" href="{{ url_for('static', filename='style3.css') }}" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="style4" href="{{ url_for('static', filename='style4.css') }}" />
 
     <!-- Javascript -->
-    <script type="text/javascript" src="static/styleswitch.js"></script>
-    <script type="text/javascript" src="../static/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/jquery-1.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='styleswitch.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-1.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../static/olliephillips-cookiesdirective.js-8c14db758d2e/jquery.cookiesdirective.js"></script>
-  
+    <script type="text/javascript" src="{{ url_for('static', filename='olliephillips-cookiesdirective.js-8c14db758d2e/jquery.cookiesdirective.js') }}"></script>
+
 </head>
 
 
@@ -27,17 +27,17 @@
     <div id="bar">
         <div class="container">
             <br><br><br><br><br>
-            <h6>Kanji Flash Cards</h6>
+            <h6>Flash Cards - {{ title }}</h6>
 
 
             <!---Access Button-->
             <div id="accessText">
                 <small>Change Display Size and Colour</small>
                 <ul>
-                    <i1><a href="javascript:chooseStyle('style', 60)"><img src="../static/image/normal.gif" alt="Default Text Size" width="16" height="15" /></a> </i1>
-                    <i1><a href="javascript:chooseStyle('style2', 60)"><img src="../static/image/large.gif" alt="Large Text Size" width="16" height="15"  /></a> </i1>
-                    <i1><a href="javascript:chooseStyle('style3', 60)"><img src="../static/image/xlarge.gif" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
-                    <i1><a href="javascript:chooseStyle('style4', 60)"><img src="../static/image/Contrast.gif" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style', 60)"><img src="{{ url_for('static', filename='image/normal.gif') }}" alt="Default Text Size" width="16" height="15" /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style2', 60)"><img src="{{ url_for('static', filename='image/large.gif') }}" alt="Large Text Size" width="16" height="15"  /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style3', 60)"><img src="{{ url_for('static', filename='image/xlarge.gif') }}" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style4', 60)"><img src="{{ url_for('static', filename='image/contrast.gif') }}" alt="High Contrast" width=width="16" height="15"  /></a> </i1>
                 </ul>
             </div>
             <!--Access Button above-->
@@ -87,7 +87,7 @@
 
     </nav>
 
-  
+
     <p>Press reload to see new Kanji</p>
     <p>Use your mouse to practice your pronunciation </p>
 
@@ -95,17 +95,21 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Kanji</th>
-                <th>Pronunciation</th>
-                <th>English</th>
+            {% for column in header %}
+                <th>{{ column }}</th>
+            {%endfor%}
             </tr>
         </thead>
         <tbody>
-            {% for kanji, pronunciation, english in kanji %}
+            {% for row in rows %}
             <tr>
-                <td class="kanji"><h1>{{kanji}}</h1></td>
-                <td class="kanji"><h4>{{pronunciation}}</h4></td>
-                <td class="kanji"><h5>{{english}}</h5></td>
+                {% for column in row %}
+                    {% if loop.index == 1 %}
+                        <td><h1>{{ column }}</h1></td>
+                    {% else %}
+                        <td><h4>{{ column }}</h4></td>
+                    {% endif %}
+                {% endfor %}
             </tr>
             {%endfor%}
         </tbody>
@@ -129,7 +133,7 @@
 		var cookieScripts = function () {
 			// Internal javascript called
 			console.log("Running");
-		
+
 			// Loading external javascript file
 			$.cookiesDirective.loadScript({
 				uri:'external.js',
@@ -138,31 +142,31 @@
 		}
 
 		/* Call cookiesDirective, overriding any default params
-		
+
 			*** These are the defaults ***
 				explicitConsent: true,
 				position: 'top',
 				duration: 10,
 				limit: 0,
-				message: null,				
+				message: null,
 				cookieScripts: null,
 				privacyPolicyUri: 'privacy.html',
-				scriptWrapper: function(){},	
+				scriptWrapper: function(){},
 				fontFamily: 'helvetica',
 				fontColor: '#FFFFFF',
 				fontSize: '13px',
 				backgroundColor: '#000000',
 				backgroundOpacity: '80',
 				linkColor: '#CA0000'
-				
+
 		*/
 
 		$.cookiesDirective({
 			privacyPolicyUri: '../templates/cookiepolicy.php',
 			explicitConsent: false,
 			position : 'bottom',
-			scriptWrapper: cookieScripts, 
-			cookieScripts: 'Google Analytics,Facebook,Twitter ', 
+			scriptWrapper: cookieScripts,
+			cookieScripts: 'Google Analytics,Facebook,Twitter ',
 			backgroundColor: '#4CAF50',
 			linkColor: '#000'
 		});

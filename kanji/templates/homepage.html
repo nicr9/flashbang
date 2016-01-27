@@ -36,27 +36,22 @@
     <div class=page>
 
         <h1>Flashbang</h1>
-        <div class=metanav>
-            <a href="{{ url_for('reload') }}">Reload Kanji</a>
-        </div>
 
         <div class=table>
             <table style="width:100%">
                 <tr>
-                    <th>Kanji</th>
-                    <th>Pronunciation</th>
-                    <th>English</th>
+                    <th>Flash Cards</th>
                 </tr>
 
-                {% for kanji, pronunciation, english in kanji %}
+                {% for name, ref in spreadsheets %}
                 <tr>
-                    <td class=kanji>{{ kanji }}</td>
-                    <td class=hidden>{{ pronunciation }}</td>
-                    <td class=hidden>{{ english }}</td>
+                    <td class=kanji>
+                        <a href="{{ ref }}">{{ name }}</a>
+                    </td>
                 </tr>
                 {% endfor %}
 
             </table>
-        </div>
-    </div>
+        </div> <!-- class=table -->
+    </div> <!-- class=page -->
 </body>
