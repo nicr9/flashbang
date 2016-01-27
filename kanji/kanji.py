@@ -30,9 +30,9 @@ def homepage():
         # [('name': 'flash_cards/name'), ...]
         rows = [
                 (name, "flash_cards/{}".format(name))
-                for name in reader
+                for (name,) in reader
                 ]
-    return render_template("homepage.html", rows=rows)
+    return render_template("homepage.html", spreadsheets=rows)
 
 @app.route("/flash_cards/<spreadsheet>")
 def flash_cards(spreadsheet):
