@@ -1,12 +1,12 @@
 COMPOSE=docker-compose --project-name flashbang
 
-all: build-all flashbang-up
+all: build-all web-up
 
 build-all:
 	$(COMPOSE) build
 
-flashbang-up:
-	$(COMPOSE) up -d flashbang
+web-up:
+	$(COMPOSE) up -d web
 
 logs:
 	$(COMPOSE) logs

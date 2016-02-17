@@ -1,4 +1,4 @@
-flashbang:
+web:
   build: ./flashbang
   command: python flashbang.py
   ports:
