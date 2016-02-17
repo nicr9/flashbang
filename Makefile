@@ -1,12 +1,12 @@
-COMPOSE=docker-compose --project-name kanji
+COMPOSE=docker-compose --project-name flashbang
 
-all: build-all kanji-up
+all: build-all flashbang-up
 
 build-all:
 	$(COMPOSE) build
 
-kanji-up:
-	$(COMPOSE) up -d kanji
+flashbang-up:
+	$(COMPOSE) up -d flashbang
 
 logs:
 	$(COMPOSE) logs
