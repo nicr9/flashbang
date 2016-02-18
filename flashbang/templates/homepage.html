@@ -1,57 +1,17 @@
-<!doctype html>
-<head>
+{% extends "layout.html" %}
+{% block content %}
+    <table style="width:100%">
+        <tr>
+            <th>Flash Cards</th>
+        </tr>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Turn Google Spreadsheets into flash cards.">
-    <meta name="author" content="Anthony Bermingham and Nic Roland">
+        {% for name, ref in spreadsheets %}
+        <tr>
+            <td class=kanji>
+                <a href="{{ ref }}">{{ name }}</a>
+            </td>
+        </tr>
+        {% endfor %}
 
-    <title>Flashbang - Homepage</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="{{ url_for('static', filename='agency.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='style.css') }}" rel=stylesheet type=text/css>
-
-    <!-- jQuery -->
-    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="{{ url_for('static', filename='classie.js') }}"></script>
-    <script src="{{ url_for('static', filename='cbpAnimatedHeader.js') }}"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="{{ url_for('static', filename='agency.js') }}"></script>
-
-</head>
-
-<body>
-    <div class=page>
-
-        <h1>Flashbang</h1>
-
-        <div class=table>
-            <table style="width:100%">
-                <tr>
-                    <th>Flash Cards</th>
-                </tr>
-
-                {% for name, ref in spreadsheets %}
-                <tr>
-                    <td class=kanji>
-                        <a href="{{ ref }}">{{ name }}</a>
-                    </td>
-                </tr>
-                {% endfor %}
-
-            </table>
-        </div> <!-- class=table -->
-    </div> <!-- class=page -->
-</body>
+    </table>
+{% endblock %}
