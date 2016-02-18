@@ -34,6 +34,10 @@ def homepage():
                 ]
     return render_template("homepage.html", spreadsheets=rows)
 
+@app.route("/meta/<page>")
+def meta(page):
+    return render_template("{}.html".format(page))
+
 @app.route("/flash_cards/<spreadsheet>")
 def flash_cards(spreadsheet):
     """
