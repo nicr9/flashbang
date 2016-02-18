@@ -45,9 +45,15 @@ def flash_cards(spreadsheet):
         reader = csv.reader(inp, delimiter=',')
 
         # Read all rows of the csv file
+        header = next(reader)
         rows = [row for row in reader]
 
-    return render_template("flash_cards.html", title=spreadsheet, rows=random.sample(rows, 4))
+    return render_template(
+            "flash_cards.html",
+            title=spreadsheet,
+            header=header,
+            rows=random.sample(rows, 4)
+            )
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=4000) # 127.0.0.1:4000
