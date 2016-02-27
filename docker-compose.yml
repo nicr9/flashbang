@@ -2,4 +2,4 @@ web:
   build: ./flashbang
   command: python flashbang.py
   ports:
-    - "4000:4000"
+    - "80:4000"
