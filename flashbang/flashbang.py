@@ -1,6 +1,8 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 from os import environ
 
+import urllib
+import re
 import csv
 import random
 import os.path
@@ -16,6 +18,11 @@ CSV = os.path.dirname(__file__)
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+def key(name):
+    underscores  = re.sub(" ", '_', name)
+    alphabets = re.sub("[^\w_]", '', underscores)
+    return alphabets.lower()
+
 @app.route("/")
 def homepage():
     """
@@ -30,9 +37,32 @@ def homepage():
         # [('name': 'flash_cards/name'), ...]
         rows = [
                 (name, "flash_cards/{}".format(name))
-                for (name,) in reader
+                for (name, _) in reader
                 ]
     return render_template("homepage.html", spreadsheets=rows)
+
+@app.route("/create", methods=['POST', 'GET'])
+def create():
+    error = None
+    if request.method == 'POST':
+        name = key(request.form['name'])
+        url = request.form['url']
+
+        # Update spreadsheets.csv
+        csv_path = os.path.join(CSV, 'spreadsheets.csv')
+        with open(csv_path, 'a', encoding="utf8") as outp:
+            writer = csv.writer(outp, delimiter=',')
+            writer.writerow([name, url])
+
+        # Create <name>.csv
+        csv_path = os.path.join(CSV, name + '.csv')
+        with open(csv_path, 'wb') as outp:
+            response = urllib.request.urlopen(url)
+            outp.write(response.read())
+
+        return flash_cards(name)
+
+    return render_template('homepage.html', error=error)
 
 @app.route("/meta/<page>")
 def meta(page):
