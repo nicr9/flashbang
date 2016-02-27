@@ -10,3 +10,6 @@ web-up:
 
 logs:
 	$(COMPOSE) logs
+
+backup:
+	docker cp flashbang_web_1:/usr/src/app/data flashbang
