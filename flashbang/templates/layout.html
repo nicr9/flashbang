@@ -32,10 +32,18 @@
             <div id="accessText">
                 <small>Change Display Size and Colour</small>
                 <ul>
-                    <i1><a href="javascript:chooseStyle('style', 60)"><img src="{{ url_for('static', filename='image/normal.gif') }}" alt="Default Text Size" width="16" height="15" /></a> </i1>
-                    <i1><a href="javascript:chooseStyle('style2', 60)"><img src="{{ url_for('static', filename='image/large.gif') }}" alt="Large Text Size" width="16" height="15"  /></a> </i1>
-                    <i1><a href="javascript:chooseStyle('style3', 60)"><img src="{{ url_for('static', filename='image/xlarge.gif') }}" alt="Larger Text Size" width=width="16" height="15"  /></a> </i1>
-                    <i1><a href="javascript:chooseStyle('style4', 60)"><img src="{{ url_for('static', filename='image/contrast.gif') }}" alt="High Contrast" width=width="16" height="15"  /></a> </i1>
+                    <i1><a href="javascript:chooseStyle('style', 60)">
+                        <img class="accessability" src="{{ url_for('static', filename='image/normal.gif') }}" alt="Default Text Size" />
+                    </a> </i1>
+                    <i1><a href="javascript:chooseStyle('style2', 60)">
+                        <img class="accessability" src="{{ url_for('static', filename='image/large.gif') }}" alt="Large Text Size"/>
+                    </a> </i1>
+                    <i1><a href="javascript:chooseStyle('style3', 60)">
+                        <img class="accessability" src="{{ url_for('static', filename='image/xlarge.gif') }}" alt="Larger Text Size"/>
+                    </a> </i1>
+                    <i1><a href="javascript:chooseStyle('style4', 60)">
+                        <img class="accessability" src="{{ url_for('static', filename='image/contrast.gif') }}" alt="High Contrast"/>
+                    </a> </i1>
                 </ul>
             </div>
             <!--Access Button above-->

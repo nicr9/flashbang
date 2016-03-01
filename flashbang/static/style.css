@@ -65,9 +65,9 @@ th {
     -moz-box-shadow: 0 0 70px #222;
     -webkit-box-shadow: 0 0 70px #222;
 }
-img {
+img.accessability {
 	width: 20px;
-		height: 20px;
+    height: 20px;
 }
 
 .page           { margin: 2em auto; width: 55em; border: 5px solid #ccc;
