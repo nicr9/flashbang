@@ -8,7 +8,7 @@ import random
 import os.path
 
 # Config
-DEBUG = True
+DEBUG = False
 SPREADSHEET = "https://docs.google.com/spreadsheets/d/1HYaVNzAfFPguuud0abHIcVBvYYc9l5yJ8R7fiukwSu8/pub?gid=1951215858&single=true&output=csv"
 
 # Paths
